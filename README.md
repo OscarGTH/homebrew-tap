@@ -15,6 +15,10 @@ brew tap OscarGTH/tap
 brew install readcode
 ```
 
+> **Homebrew 6 and later:** a third-party tap can contain arbitrary Ruby, so
+> Homebrew now asks you to trust one before it loads its formulae. If a command
+> refuses with "untrusted tap", run `brew trust OscarGTH/tap` once and retry.
+
 ## What is in here
 
 | Formula | What it does |
@@ -44,5 +48,15 @@ brew install readcode
    shasum -a 256 /tmp/src.tar.gz
    ```
 
-3. `brew audit --strict --new OscarGTH/tap/<name>`, then
-   `brew install --build-from-source OscarGTH/tap/<name>` and `brew test <name>`.
+3. Trust the tap, then audit and install from source:
+
+   ```sh
+   brew trust --formula OscarGTH/tap/<name>     # Homebrew 6+; without it audit refuses
+   brew audit --strict --new OscarGTH/tap/<name>
+   brew install --build-from-source OscarGTH/tap/<name>
+   brew test <name>
+   ```
+
+   On Homebrew 6 an audit of this tap fails with "Refusing to load formula …
+   from untrusted tap" until it is trusted. That is the tap-trust policy, not a
+   problem with the formula; `brew install` itself works either way.
