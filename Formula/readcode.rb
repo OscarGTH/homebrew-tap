@@ -1,8 +1,8 @@
 class Readcode < Formula
   desc "Learn a language by annotating real code, then get graded on it"
   homepage "https://github.com/OscarGTH/readcode"
-  url "https://github.com/OscarGTH/readcode/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "4080834b056a83cf7ccff93a10ba35ce9203ad6c55191b3b372b0637194bb473"
+  url "https://github.com/OscarGTH/readcode/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "61b80dcffbca82a037bddfb34720e64adebc6b401d226c9dd02adc54b8efdd10"
   license "MIT"
   head "https://github.com/OscarGTH/readcode.git", branch: "main"
 
